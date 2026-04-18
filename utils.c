@@ -6,11 +6,30 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 09:00:22 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/18 09:05:20 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/18 09:41:48 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
+int check_digits(char *str)
+{
+    int i = 0;
+
+    while (str[i])
+    {
+        if (!(str[i] >= '0' && str[i] <= '9'))
+            return 0;
+        i++;
+    }
+    return 1;
+}
+int ft_isdigit(char c)
+{
+    if (c >= '0' && c <= '9')
+        return 1;
+    return 0;
+}
 
 static int	ft_isspace(char c)
 {
@@ -40,6 +59,8 @@ int	ft_atoi(char *str)
 	num = 0;
 	sign = 1;
 	count = 0;
+	if (!check_digits(str))
+		return -1;
 	while (ft_isspace(str[count]))
 		count++;
 	if (str[count] == '-')
@@ -54,6 +75,5 @@ int	ft_atoi(char *str)
 			return (-1);
 		count++;
 	}
-	free (str);
 	return (num * sign);
 }

@@ -1,7 +1,7 @@
 // #include "utils.h"
-#include <stdio.h>
+#include "codixion.h"
 
 int main(){
-    int n = ft_atoi("abc");
+    int n = ft_atoi("23sbc");
     printf("%d", n);
 }
