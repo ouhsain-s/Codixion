@@ -5,5 +5,8 @@
 #include <stdlib.h>
 
 int	ft_atoi(char *str);
+int get_num_of_coders(char *num_coders);
+int get_time(char *str_time);
+char *get_scheduler(char *type);
 
 #endif
