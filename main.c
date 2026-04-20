@@ -1,7 +1,7 @@
 #include "codixion.h"
 #include "mems.h"
 
-int check_is_data_matched(configs_t data){
+int check_is_data_matched(t_configs data){
 
     if (data.number_of_coders < 0)
         return 0;
@@ -22,7 +22,7 @@ int check_is_data_matched(configs_t data){
     return 1;
 }
 
-void print_configs(configs_t args)
+void print_configs(t_configs args)
 {
     printf("=== CONFIGS ===\n");
     printf("number_of_coders            : %d\n", args.number_of_coders);
@@ -40,7 +40,7 @@ int main(int argc, char **argv){
         printf("%d", argc);
         return 1;
     }
-    configs_t args;
+    t_configs args;
     args.number_of_coders = get_num_of_coders(argv[1]);
     args.time_to_burnout = get_time(argv[2]);
     args.time_to_compile = get_time(argv[3]);
