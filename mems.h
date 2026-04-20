@@ -4,6 +4,7 @@
 #include <pthread.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "queue.h"
 
 
 typedef struct args_t{
