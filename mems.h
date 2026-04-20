@@ -1,6 +1,9 @@
 #ifndef MEMS_H
 #define MEMS_H
 
+#include <pthread.h>
+#include <GQueue.h>
+
 typedef struct args_t{
    int number_of_coders;
    int time_to_burnout;
@@ -11,5 +14,17 @@ typedef struct args_t{
    int dongle_cooldown;
    char *scheduler;
 } configs_t;
+
+typedef struct dangels{
+   pthread_mutex_t mutex;
+   bool is_avaliable;
+   bool timeto_willbe_avaliable;
+   GQueue *periorety_queue;
+}
+typedef struct coders{
+   int id;
+   dangels *left_dangel;
+   dangels *rigth_dangel;
+} coders_t;
 
 #endif
