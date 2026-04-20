@@ -2,7 +2,9 @@
 #define MEMS_H
 
 #include <pthread.h>
-#include <GQueue.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
 
 typedef struct args_t{
    int number_of_coders;
@@ -19,12 +21,13 @@ typedef struct dangels{
    pthread_mutex_t mutex;
    bool is_avaliable;
    bool timeto_willbe_avaliable;
-   GQueue *periorety_queue;
-}
+   t_queue *periorety_queue;
+}dangel_t;
+
 typedef struct coders{
-   int id;
-   dangels *left_dangel;
-   dangels *rigth_dangel;
+   int coder_id;
+   dangel_t *left_dangel;
+   dangel_t *rigth_dangel;
 } coders_t;
 
 #endif

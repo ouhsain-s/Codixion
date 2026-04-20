@@ -3,19 +3,19 @@
 
 int check_is_data_matched(configs_t data){
 
-    if (data.number_of_coders > 0)
+    if (data.number_of_coders < 0)
         return 0;
-    if (data.time_to_burnout > 0)
+    if (data.time_to_burnout < 0)
         return 0;
-    if (data.time_to_compile > 0)
+    if (data.time_to_compile < 0)
         return 0;
-    if (data.time_to_debug > 0)
+    if (data.time_to_debug < 0)
         return 0;
-    if (data.time_to_refactor > 0)
+    if (data.time_to_refactor < 0)
         return 0;
-    if (data.number_of_compiles_required > 0)
+    if (data.number_of_compiles_required < 0)
         return 0;
-    if (data.dongle_cooldown > 0)
+    if (data.dongle_cooldown < 0)
         return 0;
     if (data.scheduler[0] == '\0')
         return 0;
@@ -50,7 +50,7 @@ int main(int argc, char **argv){
     args.dongle_cooldown = ft_atoi(argv[7]);
     args.scheduler = get_scheduler(argv[8]);
 
-    if (!check_is_data_matched(args))
+    if (check_is_data_matched(args) == 0)
         return 1;
 
     print_configs(args);
