@@ -57,6 +57,7 @@ int main(int argc, char **argv){
 
     if (check_is_data_matched(args) == 0)
         return 1;
-    void start_somulation(args);
+    start_simulation(&args);
     print_configs(args);
+    return 0;
 }

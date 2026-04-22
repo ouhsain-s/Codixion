@@ -1,6 +1,3 @@
-#ifndef INIT_MEMS_H
-#define INIT_MEMS_H
-
 #include "mems.h"
 
 void init_status(t_status *stat, t_configs	*configs){
@@ -30,7 +27,6 @@ void init_coder(t_coder *coder, int id,t_dongel	*r_d, t_dongel	*l_d){
     coder->last_compiletime = -1;
     coder->left_dongle = l_d;
     coder->right_dongle = r_d;
-	coder->num_of_compiles = 
+	coder->num_of_compiles = 0;
     pthread_attr_init(&coder->thread_id);
 }
-#endif

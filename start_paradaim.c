@@ -10,7 +10,8 @@ void link_coders_with_dongels(t_status *stat){
 
 	while (i < stat->sesion_conf->number_of_coders)
 	{
-		init_dongel(stat->set_of_dongles[i]);
+		init_dongel(&stat->set_of_dongles[i]);
+		i++;
 	}
 	i = 0;
 	while (i < stat->sesion_conf->number_of_coders)
@@ -26,11 +27,12 @@ void link_coders_with_dongels(t_status *stat){
 		}
 		num_compile = stat->sesion_conf->number_of_compiles;
 		stat->set_of_coders[i].num_of_compiles = num_compile;
-		init_coder(stat->set_of_coders[i], i, r, l);
+		init_coder(&stat->set_of_coders[i], i, r, l);
+		i++;
 	}
 }
 
-void start_somulation(t_configs	*confs){
+void start_simulation(t_configs	*confs){
 	t_status	systat;
 	int			n_cods;
 	char		*scheduler;
