@@ -1,7 +1,5 @@
 #include "mems.h"
 
-
-
 void link_coders_with_dongels(t_status *stat){
 	int	i;
 	int	num_compile;
