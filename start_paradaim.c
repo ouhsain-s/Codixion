@@ -30,7 +30,7 @@ void link_coders_with_dongels(t_status *stat, t_configs	*confs){
 	}
 }
 
-void start_semulation(t_configs	*confs){
+void start_somulation(t_configs	*confs){
 	t_status	systat;
 	int			n_cods;
 	char		*scheduler;

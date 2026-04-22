@@ -1,3 +1,6 @@
+#ifndef INIT_MEMS_H
+#define INIT_MEMS_H
+
 #include "mems.h"
 
 void init_status(t_status *stat, int	n_cods, char	*scheduler){
@@ -30,3 +33,4 @@ void init_coder(t_coder *coder, int id,t_dongel	*r_d, t_dongel	*l_d){
 	coder->num_of_compiles = 
     pthread_attr_init(&coder->thread_id);
 }
+#endif

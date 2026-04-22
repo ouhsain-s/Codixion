@@ -8,5 +8,5 @@ int	ft_atoi(char *str);
 int get_num_of_coders(char *num_coders);
 int get_time(char *str_time);
 char *get_scheduler(char *type);
-
+void start_somulation(t_configs	*confs);
 #endif
