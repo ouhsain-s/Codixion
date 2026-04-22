@@ -22,7 +22,7 @@ void init_dongel(t_dongel *dongel){
     init_queue(dongel->periorety_queue);
 }
 
-void init_coder(t_coder *coder, int id, t_dongel    *l_d, t_dongel   *r_d){
+void init_coder(t_coder *coder, int id,t_dongel   *r_d, t_dongel    *l_d){
     coder->coder_id = id;
     coder->last_compiletime = -1;
     coder->left_dongle = l_d;
