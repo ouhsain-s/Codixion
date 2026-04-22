@@ -1,6 +1,6 @@
 #include "mems.h"
 
-void link_coders_with_dongels(t_status *stat){
+void link_coders_with_dongles(t_status *stat){
 	int	i;
 	int	num_compile;
 	t_dongle	*r;
@@ -10,7 +10,7 @@ void link_coders_with_dongels(t_status *stat){
 
 	while (i < stat->session_conf->number_of_coders)
 	{
-		init_dongel(&stat->set_of_dongles[i]);
+		init_dongle(&stat->set_of_dongles[i]);
 		i++;
 	}
 	i = 0;
@@ -40,5 +40,5 @@ void start_simulation(t_configs	*confs){
 	n_cods = confs->number_of_coders;
 	scheduler = confs->scheduler_type;
 	init_status(&systat, confs);
-	link_coders_with_dongels(&systat);
+	link_coders_with_dongles(&systat);
 }
