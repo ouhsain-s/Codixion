@@ -43,7 +43,7 @@ typedef struct s_status{
    t_dongel   *set_of_dongles;
    pthread_mutex_t print_mutex;
    char *scheduler_type;
-   int num_of_coders;
+   t_configs   *sesion_conf;
 }t_status;
 
 #endif

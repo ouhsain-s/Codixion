@@ -3,19 +3,19 @@
 
 #include "mems.h"
 
-void init_status(t_status *stat, int	n_cods, char	*scheduler){
+void init_status(t_status *stat, t_configs	*configs){
 	t_coder		*arr_coders;
 	t_dongel	*arr_dongel;
 	struct timeval	t;
 
-	arr_coders = malloc(sizeof(t_coder) * n_cods);
-	arr_dongel = malloc(sizeof(t_dongel) * n_cods);
-	stat->scheduler_type = scheduler;
+	arr_coders = malloc(sizeof(t_coder) * configs->number_of_coders);
+	arr_dongel = malloc(sizeof(t_dongel) * configs->number_of_coders);
+	stat->scheduler_type = configs->scheduler_type;
 	stat->set_of_coders = arr_coders;
 	stat->set_of_dongles = arr_dongel;
 	stat->start_time = gettimeofday(&t, NULL);
 	stat->start_time = t.tv_sec * 1000 + t.tv_usec / 1000;
-	stat->num_of_coders = n_cods;
+	stat->sesion_conf = configs;
 }
 
 void init_dongel(t_dongel *dongel){
