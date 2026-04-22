@@ -39,6 +39,6 @@ void start_somulation(t_configs	*confs){
 
 	n_cods = confs->number_of_coders;
 	scheduler = confs->scheduler_type;
-	init_status(&systat, n_cods, scheduler);
+	init_status(&systat, confs);
 	link_coders_with_dongels(&systat);
 }
