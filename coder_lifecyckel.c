@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   coder_lifecyckel.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/22 15:09:37 by souhsain          #+#    #+#             */
+/*   Updated: 2026/04/22 15:09:37 by souhsain         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "mems.h"
 
-void    *coder_routine(void *arg){
-
-    
-    return NULL;
+void	*coder_routine(void *arg)
+{
+	(void)arg;
+	return (NULL);
 }

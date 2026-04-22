@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_mems.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/22 15:09:37 by souhsain          #+#    #+#             */
+/*   Updated: 2026/04/22 15:09:37 by souhsain         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "mems.h"
 
-void init_status(t_status *stat, t_configs	*configs){
+void	init_status(t_status *stat, t_configs *configs)
+{
 	t_coder		*arr_coders;
 	t_dongle	*arr_dongle;
 	struct timeval	t;
@@ -15,18 +28,20 @@ void init_status(t_status *stat, t_configs	*configs){
 	stat->session_conf = configs;
 }
 
-void init_dongle(t_dongle *dongle){
-    dongle->last_release_time = -1;
-    pthread_mutex_init(&dongle->mutex, NULL);
-    dongle->priority_queue = malloc(sizeof(t_queue));
-    init_queue(dongle->priority_queue);
+void	init_dongle(t_dongle *dongle)
+{
+	dongle->last_release_time = -1;
+	pthread_mutex_init(&dongle->mutex, NULL);
+	dongle->priority_queue = malloc(sizeof(t_queue));
+	init_queue(dongle->priority_queue);
 }
 
-void init_coder(t_coder *coder, int id,t_dongle	*r_d, t_dongle	*l_d){
-    coder->coder_id = id;
-    coder->last_compiletime = -1;
-    coder->left_dongle = l_d;
-    coder->right_dongle = r_d;
+void	init_coder(t_coder *coder, int id, t_dongle *r_d, t_dongle *l_d)
+{
+	coder->coder_id = id;
+	coder->last_compiletime = -1;
+	coder->left_dongle = l_d;
+	coder->right_dongle = r_d;
 	coder->num_of_compiles = 0;
-    pthread_attr_init(&coder->thread_id);
+	pthread_attr_init(&coder->thread_id);
 }
