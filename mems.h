@@ -15,7 +15,7 @@ typedef struct s_configs{
    int time_to_compile;
    int time_to_debug;
    int time_to_refactor;
-   int number_of_compiles_required;
+   int number_of_compiles;
    int dongle_cooldown;
    char *scheduler_type;
 } t_configs;

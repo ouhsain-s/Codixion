@@ -2,7 +2,7 @@
 
 
 
-void link_coders_with_dongels(t_status *stat){
+void link_coders_with_dongels(t_status *stat, t_configs	*confs){
 	int	i;
 	t_dongel	*r;
 	t_dongel	*l;
@@ -25,7 +25,8 @@ void link_coders_with_dongels(t_status *stat){
 			r = &stat->set_of_dongles[i];
 			l = &stat->set_of_dongles[0];
 		}
-		init_coder(stat->set_of_coders[i], r, l);
+		stat->set_of_coders[i].num_of_compiles = confs->number_of_compiles;
+		init_coder(stat->set_of_coders[i], i, r, l);
 	}
 }
 
@@ -37,5 +38,5 @@ void start_semulation(t_configs	*confs){
 	n_cods = confs->number_of_coders;
 	scheduler = confs->scheduler_type;
 	init_status(&systat, n_cods, scheduler);
-	link_coders_with_dongels(&systat)
+	link_coders_with_dongels(&systat, confs);
 }
