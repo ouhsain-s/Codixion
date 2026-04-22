@@ -6,11 +6,9 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:16:41 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/22 16:36:39 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/22 16:38:59 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "codixion.h"
 
 int get_num_of_coders(char	*num_coders){
 	int	num;
@@ -33,3 +31,4 @@ int get_time(char	*str_time){
 char *get_scheduler(char	*type){
 	return type;
 }
+1
