@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "mems.h"
 
 int	ft_atoi(char *str);
 int get_num_of_coders(char *num_coders);

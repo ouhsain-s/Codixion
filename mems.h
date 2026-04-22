@@ -20,17 +20,17 @@ typedef struct s_configs{
    char *scheduler_type;
 } t_configs;
 
-typedef struct s_dongel{
+typedef struct s_dongle{
    pthread_mutex_t   mutex;
    long last_release_time;
-   t_queue *periorety_queue;
-}t_dongel;
+   t_queue *priority_queue;
+}t_dongle;
 
 typedef struct s_coder{
    int coder_id;
    pthread_t thread_id;
-   t_dongel *left_dongle;
-   t_dongel *right_dongle;
+   t_dongle *left_dongle;
+   t_dongle *right_dongle;
    long last_compiletime;
    int num_of_compiles;
    
@@ -40,10 +40,10 @@ typedef struct s_status{
    long  start_time;
    int   stop;
    t_coder   *set_of_coders;
-   t_dongel   *set_of_dongles;
+   t_dongle   *set_of_dongles;
    pthread_mutex_t print_mutex;
    char *scheduler_type;
-   t_configs   *sesion_conf;
+   t_configs   *session_conf;
 }t_status;
 
 #endif
