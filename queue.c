@@ -6,14 +6,14 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 17:02:07 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/22 16:20:47 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/22 16:34:42 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "queue.h"
 
-void    init_queue(t_queue *q){
+void init_queue(t_queue *q){
 	q->front = NULL;
 	q->rear = NULL;
 }
@@ -22,7 +22,7 @@ int is_empty(t_queue *q){
 	return (q->front == NULL);
 }
 
-void    enqueue(t_queue *q, void *value){
+void enqueue(t_queue *q, void *value){
 	t_node *new_node = malloc(sizeof(t_node));
 	if (!new_node)
 		return;

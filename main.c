@@ -6,7 +6,7 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:16:53 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/22 16:29:02 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/22 16:35:24 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void print_configs(t_configs	args)
 	printf("scheduler                   : %s\n", args.scheduler_type);
 }
 
-void get_validate_args(char **argv, t_configs *t_args)
+void get_validate_args(char	**argv, t_configs	*t_args)
 {
 	t_args->number_of_coders = get_num_of_coders(argv[1]);
 	t_args->time_to_burnout = get_time(argv[2]);
@@ -60,12 +60,12 @@ void get_validate_args(char **argv, t_configs *t_args)
 	t_args->scheduler_type = get_scheduler(argv[8]);
 }
 
-int main(int argc, char **argv){
+int main(int	argc, char	**argv){
 	if (argc != 9){
 		printf("%d", argc);
 		return 1;
 	}
-	t_configs args;
+	t_configs	args;
 	get_validate_args(argv, &args);
 
 	if (check_is_data_matched(args) == 0)
