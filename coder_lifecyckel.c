@@ -6,15 +6,13 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:17:26 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/22 16:17:27 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/22 16:23:30 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "mems.h"
 
-void    *coder_routine(void *arg){
-
-    
-    return NULL;
+void    *coder_routine(void	*arg){
+	return NULL;
 }

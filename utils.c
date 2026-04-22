@@ -6,7 +6,7 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 09:00:22 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/18 09:41:48 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/22 16:21:08 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 int check_digits(char *str)
 {
-    int i = 0;
+	int i = 0;
 
-    while (str[i])
-    {
-        if (!(str[i] >= '0' && str[i] <= '9'))
-            return 0;
-        i++;
-    }
-    return 1;
+	while (str[i])
+	{
+		if (!(str[i] >= '0' && str[i] <= '9'))
+			return 0;
+		i++;
+	}
+	return 1;
 }
 int ft_isdigit(char c)
 {
-    if (c >= '0' && c <= '9')
-        return 1;
-    return 0;
+	if (c >= '0' && c <= '9')
+		return 1;
+	return 0;
 }
 
 static int	ft_isspace(char c)
