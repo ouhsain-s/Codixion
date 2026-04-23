@@ -46,4 +46,10 @@ typedef struct s_status{
    t_configs   *session_conf;
 }t_status;
 
+typedef struct s_thread_args{
+   t_status    *status;
+   int         current_id;
+}t_thrad_args;
+
+
 #endif
