@@ -1,7 +1,18 @@
 #include "mems.h"
 
-void    manage_periority(t_queue    *r, t_queue *l, char    s_type, int   id){
-    
+void    manage_periority(t_coder    *coder, char    *s_type, int    num_of_coders){
+    int i;
+    t_queue *periority;
+
+    periority = malloc(sizeof(t_queue))
+    if (s_type == "edf"){
+        i = 0;
+        while (i < num_of_coders)
+        {
+            if periority
+        }
+        
+    }
 }
 void    add_coder_toschedual(t_coder    *coder, t_configs   cofigs){
     char    *schedual;
