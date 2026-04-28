@@ -6,7 +6,7 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:17:00 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/22 16:24:16 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/28 18:13:33 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void init_dongle(t_dongle	*dongle){
 
 void init_coder(t_coder	*coder, int	id,t_dongle	*r_d, t_dongle	*l_d){
 	coder->coder_id = id;
-	coder->last_compiletime = -1;
+	coder->last_compile_time = -1;
 	coder->left_dongle = l_d;
 	coder->right_dongle = r_d;
 	coder->num_of_compiles = 0;

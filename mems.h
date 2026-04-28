@@ -31,7 +31,7 @@ typedef struct s_coder{
    pthread_t thread_id;
    t_dongle *left_dongle;
    t_dongle *right_dongle;
-   long last_compiletime;
+   long last_compile_time;
    int num_of_compiles;
    
 } t_coder;

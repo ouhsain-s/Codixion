@@ -6,7 +6,7 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 17:02:07 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/22 16:55:55 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/28 18:23:28 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int is_empty(t_queue *q){
 	return (q->front == NULL);
 }
 
-void enqueue(t_queue	*q, void	*value){
+void enqueue(t_queue	*q, t_coder	*value){
 	t_node *new_node = malloc(sizeof(t_node));
 	if (!new_node)
 		return;
@@ -40,7 +40,7 @@ void enqueue(t_queue	*q, void	*value){
 	}
 }
 
-void    *dequeue(t_queue *q)
+t_coder    *dequeue(t_queue *q)
 {
 	t_node  *todel;
 	void    *value;
@@ -67,4 +67,31 @@ void    free_queue(t_queue *q){
 		free(current);    
 	}
 	q->rear = NULL;
+}
+
+void    sort_queue(t_queue *q)
+{
+	t_node *i;
+	t_node *j;
+	t_coder *tmp;
+
+	if (!q || !q->front)
+		return;
+
+	i = q->front;
+	while (i)
+	{
+		j = i->next;
+		while (j)
+		{
+			if (i->value->last_compile_time > j->value->last_compile_time)
+			{
+				tmp = i->value;
+				i->value = j->value;
+				j->value = tmp;
+			}
+			j = j->next;
+		}
+		i = i->next;
+	}
 }

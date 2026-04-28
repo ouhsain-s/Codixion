@@ -6,7 +6,7 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:16:08 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/22 16:20:51 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/23 10:13:08 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,11 @@ void link_coders_with_dongles(t_status *stat){
 	i = 0;
 	while (i < stat->session_conf->number_of_coders)
 	{
+		r = &stat->set_of_dongles[i];
 		if (i < stat->session_conf->number_of_coders - 1)
-		{
-			r = &stat->set_of_dongles[i];
 			l = &stat->set_of_dongles[i + 1];
-		}
-		else{
-			r = &stat->set_of_dongles[i];
+		else
 			l = &stat->set_of_dongles[0];
-		}
 		num_compile = stat->session_conf->number_of_compiles;
 		stat->set_of_coders[i].num_of_compiles = num_compile;
 		init_coder(&stat->set_of_coders[i], i, r, l);

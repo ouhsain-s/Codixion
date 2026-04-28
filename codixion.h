@@ -10,4 +10,5 @@ int get_num_of_coders(char	*num_coders);
 int get_time(char	*str_time);
 char *get_scheduler(char	*type);
 void start_simulation(t_configs *confs);
+void    add_manage_periority(t_coder    *coder, char    *s_type);
 #endif
