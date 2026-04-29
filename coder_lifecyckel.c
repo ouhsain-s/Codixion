@@ -6,7 +6,7 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:17:26 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/29 12:08:06 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/29 12:34:43 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void    *coder_routine(void	*arg){
 		act_refactor(coder, status);
 		coder->num_of_compiled ++;
 	}
-	
+	free(t_args);
+	arg = NULL;
 	return NULL;
 }

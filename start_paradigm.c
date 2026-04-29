@@ -6,12 +6,12 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:16:08 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/29 12:08:06 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/29 12:36:14 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "mems.h"
+#include "codixion.h"
 
 void link_coders_with_dongles(t_status *stat){
 	int	i;
@@ -43,11 +43,20 @@ void link_coders_with_dongles(t_status *stat){
 
 void start_simulation(t_configs	*confs){
 	t_status	systat;
-	int			n_cods;
+	t_thrad_args	*args;
 	char		*scheduler;
+	int			i;
 
-	n_cods = confs->number_of_coders;
+	i = 0;
 	scheduler = confs->scheduler_type;
 	init_status(&systat, confs);
 	link_coders_with_dongles(&systat);
+	while (i < confs->number_of_coders)
+	{
+		args = malloc(sizeof(t_thrad_args));
+		args->current_id = i;
+		args->status = &systat;
+		pthread_create(&systat.set_of_coders[i], NULL, &coder_routine, args);
+	}
+	i++;
 }
