@@ -22,6 +22,7 @@ typedef struct s_configs{
 
 typedef struct s_dongle{
    pthread_mutex_t   mutex;
+   pthread_cond_t      cond; 
    long last_release_time;
    t_queue *priority_queue;
 }t_dongle;
@@ -33,7 +34,7 @@ typedef struct s_coder{
    t_dongle *right_dongle;
    long last_compile_time;
    int num_of_compiles;
-   
+
 } t_coder;
 
 typedef struct s_status{

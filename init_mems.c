@@ -6,7 +6,7 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:17:00 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/28 18:13:33 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/29 10:49:47 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void init_status(t_status	*stat, t_configs	*configs){
 void init_dongle(t_dongle	*dongle){
 	dongle->last_release_time = -1;
 	pthread_mutex_init(&dongle->mutex, NULL);
+	pthread_cond_init(&dongle->cond, NULL);
 	dongle->priority_queue = malloc(sizeof(t_queue));
 	init_queue(dongle->priority_queue);
 }
