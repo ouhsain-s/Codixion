@@ -33,7 +33,7 @@ typedef struct s_coder{
    t_dongle *left_dongle;
    t_dongle *right_dongle;
    long last_compile_time;
-   int num_of_compiles;
+   int num_of_compiled;
 
 } t_coder;
 

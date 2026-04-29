@@ -6,7 +6,7 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:16:08 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/23 10:13:08 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/29 12:08:06 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void link_coders_with_dongles(t_status *stat){
 		else
 			l = &stat->set_of_dongles[0];
 		num_compile = stat->session_conf->number_of_compiles;
-		stat->set_of_coders[i].num_of_compiles = num_compile;
+		stat->set_of_coders[i].num_of_compiled = num_compile;
 		init_coder(&stat->set_of_coders[i], i, r, l);
 		i++;
 	}

@@ -6,5 +6,5 @@
 void init_status(t_status	*stat,  t_configs	*configs);
 void init_dongle(t_dongle	*dongle);
 void init_coder(t_coder	*coder, int id,t_dongle	*r_d, t_dongle	*l_d);
-
+long get_current_time();
 #endif

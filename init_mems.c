@@ -6,25 +6,31 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:17:00 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/29 10:49:47 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/29 12:08:06 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "mems.h"
+long get_current_time(){
+	struct timeval t;
+	
+	if (gettimeofday(&t, NULL))
+		return -1;
+		// will update in  another time
+	return (t.tv_sec * 1000 + t.tv_usec / 1000);
+}
 
 void init_status(t_status	*stat, t_configs	*configs){
 	t_coder			*arr_coders;
 	t_dongle		*arr_dongle;
-	struct timeval	t;
 
 	arr_coders = malloc(sizeof(t_coder) * configs->number_of_coders);
 	arr_dongle = malloc(sizeof(t_dongle) * configs->number_of_coders);
 	stat->scheduler_type = configs->scheduler_type;
 	stat->set_of_coders = arr_coders;
 	stat->set_of_dongles = arr_dongle;
-	stat->start_time = gettimeofday(&t, NULL);
-	stat->start_time = t.tv_sec * 1000 + t.tv_usec / 1000;
+	stat->start_time = get_current_time();
 	stat->session_conf = configs;
 }
 
@@ -41,6 +47,6 @@ void init_coder(t_coder	*coder, int	id,t_dongle	*r_d, t_dongle	*l_d){
 	coder->last_compile_time = -1;
 	coder->left_dongle = l_d;
 	coder->right_dongle = r_d;
-	coder->num_of_compiles = 0;
+	coder->num_of_compiled = 0;
 	pthread_attr_init(&coder->thread_id);
 }
