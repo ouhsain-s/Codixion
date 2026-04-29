@@ -6,7 +6,7 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:16:08 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/29 12:36:14 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/29 12:41:01 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void start_simulation(t_configs	*confs){
 		args = malloc(sizeof(t_thrad_args));
 		args->current_id = i;
 		args->status = &systat;
-		pthread_create(&systat.set_of_coders[i], NULL, &coder_routine, args);
+		pthread_create(&systat.set_of_coders[i].thread_id, NULL, &coder_routine, args);
 	}
 	i++;
 }
