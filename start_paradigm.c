@@ -6,7 +6,7 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:16:08 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/29 12:41:01 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/29 15:32:44 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,11 @@ void link_coders_with_dongles(t_status *stat){
 }
 
 void start_simulation(t_configs	*confs){
-	t_status	systat;
+	t_status		systat;
 	t_thrad_args	*args;
-	char		*scheduler;
-	int			i;
+	int				i;
 
 	i = 0;
-	scheduler = confs->scheduler_type;
 	init_status(&systat, confs);
 	link_coders_with_dongles(&systat);
 	while (i < confs->number_of_coders)
@@ -59,4 +57,4 @@ void start_simulation(t_configs	*confs){
 		pthread_create(&systat.set_of_coders[i].thread_id, NULL, &coder_routine, args);
 	}
 	i++;
-}
+} 

@@ -6,7 +6,7 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:17:26 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/29 12:34:43 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/29 15:41:34 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ void	print_action(int	id, char*	message, t_status	*stat)
 		printf("%ld %d %s", time_passed, id, message);
 		pthread_mutex_unlock(&stat->print_mutex);
 }
+
 void	act_pars(t_coder	*coder, t_status	*stat){
 
 	add_manage_periority(coder, stat->scheduler_type);
-	
+
 	pthread_mutex_lock(&coder->right_dongle->mutex);
 
 	while (coder->right_dongle->priority_queue->front->value != coder)
@@ -38,6 +39,7 @@ void	act_pars(t_coder	*coder, t_status	*stat){
 
 	print_action(coder->coder_id, "is compiling", stat);
 	usleep(stat->session_conf->time_to_compile);
+	usleep(stat->session_conf->dongle_cooldown);//ask for that is allowd
 	pthread_mutex_unlock(&coder->right_dongle->mutex);
 	pthread_mutex_unlock(&coder->left_dongle->mutex);
 	pthread_cond_signal(&coder->right_dongle->cond);
