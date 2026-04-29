@@ -6,7 +6,7 @@
 /*   By: souhsain <souhsain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 16:17:26 by souhsain          #+#    #+#             */
-/*   Updated: 2026/04/29 10:55:07 by souhsain         ###   ########.fr       */
+/*   Updated: 2026/04/29 10:58:48 by souhsain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,13 @@ void	act_pars(t_coder	*coder, t_status	stat){
 
 	pthread_mutex_lock(&coder->left_dongle->mutex);
 
-	//worck will be here
+	usleep(stat.session_conf->time_to_compile);
 	
 	pthread_mutex_unlock(&coder->right_dongle->mutex);
 	pthread_mutex_unlock(&coder->left_dongle->mutex);
 	pthread_cond_signal(&coder->right_dongle->cond);
 }
+
 void    *coder_routine(void	*arg){
 	t_thrad_args	*t_args;
 	t_status		*status;
